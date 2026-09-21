@@ -2,6 +2,8 @@
 
 **An evidence-graded research dashboard for exploring publicly reported Nobel laureate blood types while keeping missing data, contradictory claims, and documentation bias visible.**
 
+[View the public evidence-review diagram and limitations](docs/VISUAL_CASE_STUDY.md) · [Public case-study page](index.html)
+
 | | |
 |---|---|
 | **Project type** | Evidence mapping · data quality · research dashboard |
