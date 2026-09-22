@@ -1,6 +1,6 @@
 # Nobel Blood Atlas | Evidence-first research interface
 
-This showcase is an **experiment in handling sparse, selectively reported public evidence**. It must not imply that reported blood-type records are representative of Nobel laureates or support biological conclusions about achievement.
+This is an **experiment in presenting sparse, selectively reported public evidence**. It must not imply that reported blood-type records are representative of Nobel laureates or support biological explanations of achievement. [Public showcase README](../README.md).
 
 ## Public evidence workflow
 
@@ -19,16 +19,30 @@ flowchart TD
   J --> B
 ```
 
-**What this does not establish:** dataset completeness, independent medical verification, a representative sample, or associations between blood type and prizes. The existing [public README](../README.md) explains evidence grades, contradictions and missingness; this diagram visualizes that description, not private database structure.
+This diagram describes the **documented public research procedure**, not proof of independent medical verification, a complete dataset, or the private database's implementation.
 
-## Public demonstration and safe screenshot criteria
+## Example: distinguish evidence states without revealing anyone's blood type
 
-The README identifies a [public research application](https://nobel-blood-atlas.aryakia97.chatgpt.site), but its live status has not been verified in this PR. No real screenshot is attached. Any future capture must exclude personal contact information, unreviewed submissions, private administrative screens and undisclosed medical records; favor the public methodology and evidence-summary views.
+| Hypothetical source situation | Appropriate status | Effect on analysis |
+| --- | --- | --- |
+| No attributable public record found | Unknown | Never impute from nationality, name or other personal attributes. |
+| A single unsupported or indirect mention | Lead / awaiting review | Exclude from corroborated comparisons. |
+| Two sources assert inconsistent types | Conflict | Retain both source trails and exclude rather than vote by frequency. |
+| Public records meet the project's specified corroboration rule | Corroborated public report | Eligible for a **descriptive screened-sample** view; not necessarily independently medically verified. |
+| A visitor submits a new claim | Pending human review | Must not automatically change public counts or downloads. |
 
-## Suggested GitHub About fields (not applied)
+**Visual interpretation requirement:** Any ABO chart must show the screened denominator, the corroborated denominator, the missing/unknown share, source-date or data-edition label, and the fact that the reporting sample is non-random. A population baseline is context, not an exchangeable control population. Do not infer a link between blood type and laureate achievement.
+
+## Screenshot and data-release checklist
+
+No actual application screenshot is included. An approved capture must be taken from the **public evidence-summary or methodology view** and checked for pending submissions, personal contact details, moderation interfaces, unpublished claims, and identifiable health information not approved for publication. Show the version and date. Do not substitute a mock-up for an application screenshot.
+
+The README identifies a [public application](https://nobel-blood-atlas.aryakia97.chatgpt.site); this review did not establish its current live availability.
+
+## GitHub About fields — proposed, not applied
 
 - **Description:** `Evidence-graded research dashboard illustrating missingness, conflicting reports and provenance in sparse public data.`
 - **Topics:** `evidence-mapping`, `data-quality`, `research-dashboard`, `provenance`, `data-visualization`
-- **Homepage:** use the publicly verified app link above only after confirming it remains accessible.
+- **Homepage:** use the public app URL only after verifying current public accessibility.
 
-No private data, credentials, unpublished material, or application source are transferred by this document.
+No individual medical record, private data, application code, credentials or unpublished material is transferred by this document.
