@@ -1,7 +1,7 @@
 {
   "dataset": "0.5.0",
-  "interface": "1.1.0",
+  "interface": "1.1.1",
   "released": "2026-10-03",
   "dataset_note": "Adds provenance structure, source-independence classes, search-status schema and explicit research-progress metadata without changing the 19-claim ABO values.",
-  "interface_note": "Adds the research-origin narrative, composition-adjusted counterfactual, two-stage selection model, contextual-baseline clarification and locked future-test pathway."
+  "interface_note": "Editorial revision of the project story: more natural first-person research voice, less schematic framing, with methodology unchanged."
 }
