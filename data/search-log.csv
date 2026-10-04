@@ -1,0 +1,4 @@
+search_event_id,subject,event_date,status,scope,source_or_evidence,notes
+SL-001,Yoshinori Ohsumi,2026-08-23,evidence_found,"Person-specific web search; interview/profile trail",https://www.sandiegoyuyu.com/index.php/features-2/interviews/大隅良典2016,"Explicit type O report found; classified as reported_secondary_source, not medical confirmation"
+SL-002,Kailash Satyarthi,2026-08-23,searched_no_type_in_reviewed_source,"Public reporting around documented blood donation",https://timesofindia.indiatimes.com/city/bhopal/blood-brother-of-vidisha-creates-donor-directory-of-85k-people/articleshow/54938960.cms,"Donation documented but ABO type not disclosed; no inference allowed"
+SL-003,Han Kang,2026-08-23,conflicting_public_profiles,"Public profile search",https://googlethx.tistory.com/entry/노벨문학상-한강-작가-프로필,"Profiles conflict and no traceable original source was established; remains outside analytical dataset"
