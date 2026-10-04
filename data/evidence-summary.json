@@ -1,0 +1,12 @@
+{
+  "dataset_version": "0.4.0",
+  "release_date": "2026-10-03",
+  "confirmed": 0,
+  "reported_secondary_source": 4,
+  "unverified": 15,
+  "conflicting_excluded": 3,
+  "unknown_or_unsearched": 970,
+  "person_laureate_denominator_snapshot": 992,
+  "screening_claims": 19,
+  "warning": "Reported-secondary records are public person-level reports, not medical-record confirmation. Unverified and conflicting claims are excluded from the stronger-source subset. The sample is sparse and non-random."
+}
