@@ -1,48 +1,61 @@
 # Nobel Blood Atlas | Evidence-first research interface
 
-This is an **experiment in presenting sparse, selectively reported public evidence**. It must not imply that reported blood-type records are representative of Nobel laureates or support biological explanations of achievement. [Public showcase README](../README.md).
+Nobel Blood Atlas is an experiment in presenting sparse, selectively reported public evidence without turning a screening sample into a census.
+
+The public GitHub Pages release now includes the screening ledger, evidence-state counts, contradiction ledger, population baselines, methodology and research notes. The active public terminology is:
+
+- **confirmed:** 0
+- **reported secondary source:** 4
+- **unverified:** 15
+- **conflicting / excluded:** 3
+- **unknown or unsearched:** 970
+- **person-laureate denominator snapshot:** 992
+
+“Reported secondary source” does **not** mean medical confirmation.
 
 ## Public evidence workflow
 
 ```mermaid
 flowchart TD
-  A[Publicly reported claim with source] --> B{Evidence review}
-  B -->|Corroborated| C[Versioned analytical evidence set]
-  B -->|Conflicting| D[Contradiction ledger; excluded from calculation]
-  B -->|Lead only| E[Research queue; excluded from calculation]
-  F[No defensible public record] --> G[Explicitly unknown]
-  C --> H[Contextual descriptive views with sample limitations]
-  D --> H
-  E --> H
-  G --> H
-  I[Public evidence submission] --> J[Human review queue]
-  J --> B
+  A[Public person-specific claim] --> B{Evidence review}
+  B -->|Direct / medical confirmation| C[Confirmed]
+  B -->|Explicit published secondary report| D[Reported secondary source]
+  B -->|Weak or unsourced lead| E[Unverified research queue]
+  B -->|Sources disagree| F[Conflict ledger; excluded]
+  G[No defensible public record] --> H[Unknown / unsearched]
+  C --> I[Descriptive evidence views]
+  D --> I
+  E --> J[Screening view only]
+  F --> J
+  H --> J
+  I --> K[Interpretation gate]
+  J --> K
 ```
 
-This diagram describes the **documented public research procedure**, not proof of independent medical verification, a complete dataset, or the private database's implementation.
+## What the interface is designed to communicate
 
-## Example: distinguish evidence states without revealing anyone's blood type
+1. Every displayed person-level claim retains its source and source type.
+2. Stronger public reports are separated from compilation leads.
+3. Contradictions remain visible and are excluded from calculations.
+4. Missingness remains visible through the full 992-person denominator frame.
+5. Population baselines are contextual scenarios, not matched control populations.
+6. The current evidence is too sparse and non-random for biological inference.
 
-| Hypothetical source situation | Appropriate status | Effect on analysis |
-| --- | --- | --- |
-| No attributable public record found | Unknown | Never impute from nationality, name or other personal attributes. |
-| A single unsupported or indirect mention | Lead / awaiting review | Exclude from corroborated comparisons. |
-| Two sources assert inconsistent types | Conflict | Retain both source trails and exclude rather than vote by frequency. |
-| Public records meet the project's specified corroboration rule | Corroborated public report | Eligible for a **descriptive screened-sample** view; not necessarily independently medically verified. |
-| A visitor submits a new claim | Pending human review | Must not automatically change public counts or downloads. |
+## Visual interpretation requirement
 
-**Visual interpretation requirement:** Any ABO chart must show the screened denominator, the corroborated denominator, the missing/unknown share, source-date or data-edition label, and the fact that the reporting sample is non-random. A population baseline is context, not an exchangeable control population. Do not infer a link between blood type and laureate achievement.
+Any ABO comparison should expose:
 
-## Screenshot and data-release checklist
+- the current sample size;
+- the denominator or field denominator;
+- the evidence threshold being used;
+- the selected population baseline and source;
+- the missing/unknown share;
+- the fact that reporting is non-random.
 
-No actual application screenshot is included. An approved capture must be taken from the **public evidence-summary or methodology view** and checked for pending submissions, personal contact details, moderation interfaces, unpublished claims, and identifiable health information not approved for publication. Show the version and date. Do not substitute a mock-up for an application screenshot.
+A population baseline is context, not evidence that a laureate belongs to that population.
 
-The README identifies a [public application](https://nobel-blood-atlas.aryakia97.chatgpt.site); this review did not establish its current live availability.
+## Public release boundary
 
-## GitHub About fields — proposed, not applied
+The public repository may include deliberately released public-source claims and methodology. It must not contain private visitor contact information, pending submissions, credentials, live database contents, deployment secrets or internal moderation state.
 
-- **Description:** `Evidence-graded research dashboard illustrating missingness, conflicting reports and provenance in sparse public data.`
-- **Topics:** `evidence-mapping`, `data-quality`, `research-dashboard`, `provenance`, `data-visualization`
-- **Homepage:** use the public app URL only after verifying current public accessibility.
-
-No individual medical record, private data, application code, credentials or unpublished material is transferred by this document.
+The former server-side evidence-submission workflow is preserved only as source code in `legacy-site-source/`; it is not active on the static GitHub Pages site.
