@@ -1,0 +1,8 @@
+status,definition,legacy_count_v0_5,analytical_treatment,next_action
+not_yet_searched,"No documented systematic search has yet been logged for this laureate",,"Not included in ABO analysis","Run and log multilingual search protocol"
+searched_no_public_record,"A documented search was completed but no defensible person-specific public ABO record was found",,"Explicit negative-search state; not included in ABO analysis","Record search date, languages, queries and databases"
+lead_found,"At least one weak, indirect or compilation claim exists but provenance is insufficient",15,"Screening only","Trace provenance and seek person-specific source"
+reported_secondary_source,"An identifiable public source explicitly reports the person's ABO type but is not independent medical confirmation",4,"Descriptive stronger-source view only","Seek independent or direct confirmation"
+confirmed,"Direct/medical/first-person or comparably strong confirmation satisfying the project's confirmation rule",0,"Eligible for strongest-evidence descriptive subset","Preserve provenance and version"
+conflicting_excluded,"Two or more incompatible claims remain unresolved",3,"Excluded from calculations","Trace original sources and resolve if stronger evidence emerges"
+legacy_unresolved_pool,"Legacy aggregate used when historical work cannot distinguish not-yet-searched from searched-with-no-record",970,"Missingness only; never treated as searched","Retroactively classify only when documentary evidence exists"
