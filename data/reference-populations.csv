@@ -1,0 +1,6 @@
+population,A_percent,B_percent,AB_percent,O_percent,source,source_type,access_check_date
+Global,29.41,23.13,6.24,41.22,https://hemefoundation.org/what-types-of-blood-donations-are-considered-rare/,broad_aggregate_estimate,2026-08-23
+Japan,40,20,10,30,https://www.bs.jrc.or.jp/kk/hyogo/donation/m2_02_01_00_bloodtype.html,blood_service_estimate,2026-08-23
+United States,42,10,4,44,https://stanfordbloodcenter.org/donate-blood/blood-donation-facts/blood-types/,blood_center_estimate,2026-08-23
+Canada,42,9,3,46,https://www.blood.ca/en/stories/blood-types-canada-how-common-or-rare-are-they,national_blood_service_estimate,2026-08-23
+South Korea,34,27,12,27,https://www.statista.com/statistics/1364781/south-korea-blood-type-distribution/,donor_distribution,2026-08-23
