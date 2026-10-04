@@ -24,9 +24,10 @@
       <span>Nobel Blood Atlas</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a href="#research">Research program</a>
       <a href="#analysis">Analysis</a>
-      <a href="#ledger">Evidence ledger</a>
-      <a href="#queue">Research queue</a>
+      <a href="#ledger">Evidence</a>
+      <a href="#queue">Coverage</a>
       <a href="#method">Method</a>
       <a href="#sources">Sources</a>
     </nav>
@@ -38,7 +39,7 @@
   <section class="hero">
     <div class="shell hero-grid">
       <div>
-        <p class="eyebrow">Evidence atlas · public research release v0.4.0</p>
+        <p class="eyebrow">Evidence atlas · dataset v0.5.0 · interface v1.0.0</p>
         <h1>When the evidence is sparse, the interface should say so.</h1>
         <p class="lede">Nobel Blood Atlas maps publicly reported blood-type claims about Nobel laureates while keeping provenance, uncertainty, contradictions, documentation bias and missingness visible. It is a research-methods project first—not a claim that blood type explains achievement.</p>
         <div class="hero-actions">
@@ -56,7 +57,7 @@
             <div class="hero-card-kicker">Evidence profile</div>
             <p>Current public research snapshot</p>
           </div>
-          <span class="release-badge">v0.4.0</span>
+          <span class="release-badge">data 0.5 · UI 1.0</span>
         </div>
 
         <div class="evidence-ring-layout">
@@ -64,7 +65,7 @@
             <div class="ring-center"><strong>97.8%</strong><span>unknown or<br>unsearched</span></div>
           </div>
           <div class="evidence-legend">
-            <div><i class="legend-swatch unknown"></i><span>Unknown / unsearched</span><b>970</b></div>
+            <div><i class="legend-swatch unknown"></i><span>Legacy unresolved pool</span><b>970</b></div>
             <div><i class="legend-swatch unverified"></i><span>Unverified</span><b>15</b></div>
             <div><i class="legend-swatch reported"></i><span>Reported secondary</span><b>4</b></div>
             <div><i class="legend-swatch conflict"></i><span>Conflict / excluded</span><b>3</b></div>
@@ -87,7 +88,95 @@
       <article><span class="status-dot reported"></span><div><b>Reported secondary</b><strong>4</strong><small>explicit published person-level reports</small></div></article>
       <article><span class="status-dot unverified"></span><div><b>Unverified</b><strong>15</strong><small>compilation leads requiring stronger sourcing</small></div></article>
       <article><span class="status-dot conflict"></span><div><b>Conflicting</b><strong>3</strong><small>kept visible, excluded from calculations</small></div></article>
-      <article><span class="status-dot unknown"></span><div><b>Unknown / unsearched</b><strong>970</strong><small>absence remains explicit</small></div></article>
+      <article><span class="status-dot unknown"></span><div><b>Legacy unresolved</b><strong>970</strong><small>not retro-classified as searched or unsearched</small></div></article>
+    </div>
+  </section>
+
+  <section class="section research-program" id="research">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Research program</p>
+          <h2>From a curiosity dataset to a study of evidence itself</h2>
+        </div>
+        <p>The atlas now treats search history, source dependence and documentation bias as first-class research objects. The blood-type question remains descriptive until the evidence architecture is strong enough to support more.</p>
+      </div>
+
+      <article class="research-question">
+        <span>Reframed scholarly question</span>
+        <blockquote>How should researchers collect, grade, model and visualize a sparse, multilingual, selectively documented public evidence corpus when missingness and source dependence are themselves part of the phenomenon?</blockquote>
+        <p>Nobel blood-type reporting is the case study. The transferable contribution is the evidence methodology.</p>
+      </article>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <div class="research-card-head">
+            <div><span>Research progress</span><h3>Evidence funnel</h3></div>
+            <a href="./data/research-progress.json">JSON ↗</a>
+          </div>
+          <div id="research-funnel" class="research-funnel"></div>
+        </article>
+
+        <article class="research-card">
+          <div class="research-card-head">
+            <div><span>Coverage matrix</span><h3>Where the evidence sits</h3></div>
+            <a href="#queue">Full queue ↓</a>
+          </div>
+          <div id="coverage-matrix" class="coverage-matrix"></div>
+        </article>
+      </div>
+
+      <div class="provenance-grid">
+        <article class="research-card provenance-card">
+          <div class="research-card-head">
+            <div><span>Provenance concentration</span><h3>Two compilation families dominate the screening set</h3></div>
+            <strong class="headline-number">78.9%</strong>
+          </div>
+          <p>Fifteen of 19 screening claims depend on the ABO Bible or ABO FAN compilation families. Repetition across derivative pages would not constitute independent corroboration.</p>
+          <div id="source-family-chart" class="source-family-chart"></div>
+          <a class="data-link" href="./data/evidence-sources.csv">Open source-level provenance data →</a>
+        </article>
+
+        <article class="research-card independence-card">
+          <div class="research-card-head">
+            <div><span>Source independence</span><h3>A separate axis from evidence status</h3></div>
+          </div>
+          <div id="independence-distribution" class="independence-distribution"></div>
+          <div class="independence-scale">
+            <span><b>0</b> unsupported / unknown provenance</span>
+            <span><b>1</b> one identifiable person-specific source</span>
+            <span><b>2</b> independent person-specific corroboration</span>
+            <span><b>3</b> direct / medical / first-person confirmation</span>
+          </div>
+        </article>
+
+        <article class="research-card bias-card">
+          <div class="research-card-head">
+            <div><span>Documentation-bias model</span><h3>Model disclosure probability before interpreting ABO</h3></div>
+            <span class="not-estimated">specified · not estimated</span>
+          </div>
+          <p>A future logistic model should estimate whether a public ABO record exists using covariates such as award decade, prize field, source-language ecosystem, living/deceased status, media salience and cultural reporting practices.</p>
+          <div class="bias-warning"><b>Why not estimate it now?</b> The 970 legacy unresolved cases cannot yet be honestly split into “not searched” and “searched with no record,” and the denominator covariates are incomplete.</div>
+          <a class="data-link" href="./docs/RESEARCH_AGENDA.md">Open the research agenda →</a>
+        </article>
+      </div>
+
+      <div class="status-architecture">
+        <div class="status-architecture-copy">
+          <p class="kicker">Search-state architecture</p>
+          <h3>Future searches no longer collapse absence into one bucket</h3>
+          <p>The historical 970-record pool remains unresolved. From v0.5.0 onward, every documented search can move a record through explicit states without inventing retroactive search history.</p>
+        </div>
+        <div class="status-path">
+          <span class="future"><b>01</b>Not yet searched<small>new forward-looking state</small></span>
+          <span class="future"><b>02</b>Searched · no public record<small>negative search is data</small></span>
+          <span><b>03</b>Lead found<small>15 current claims</small></span>
+          <span><b>04</b>Reported secondary<small>4 current claims</small></span>
+          <span><b>05</b>Confirmed<small>0 current claims</small></span>
+          <span class="conflict-state"><b>!</b>Conflict / excluded<small>3 current records</small></span>
+        </div>
+        <p class="legacy-note"><strong>Legacy rule:</strong> the 970 unresolved records are not assigned to states 01 or 02 unless a dated search record exists. See <a href="./data/search-status-schema.csv">status schema</a> and <a href="./data/search-log.csv">search log</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -194,7 +283,7 @@
       <p class="result-count" id="result-count">19 records</p>
       <div class="table-wrap">
         <table class="ledger-table">
-          <thead><tr><th>Laureate</th><th>Prize</th><th>ABO</th><th>Source type</th><th>Evidence</th><th>Source</th></tr></thead>
+          <thead><tr><th>Laureate</th><th>Prize</th><th>ABO</th><th>Source type</th><th>Evidence</th><th>Source</th><th>Dossier</th></tr></thead>
           <tbody id="ledger-body"></tbody>
         </table>
       </div>
@@ -218,7 +307,7 @@
         <div><span>Denominator</span><strong>992</strong></div>
         <div><span>Named claims</span><strong>19</strong></div>
         <div><span>Conflicts</span><strong>3</strong></div>
-        <div><span>Unknown / unsearched</span><strong>970</strong></div>
+        <div><span>Legacy unresolved</span><strong>970</strong></div>
       </div>
       <div class="table-wrap light-table">
         <table>
@@ -293,6 +382,8 @@
           <li><time>23 Aug 2026</time><b>v0.2</b><span>Evidence-grade redesign, stronger-source view, export and sensitivity checks.</span></li>
           <li><time>23 Aug 2026</time><b>v0.3</b><span>Five population baselines, full field-level research queue, matching protocol and analysis gate.</span></li>
           <li><time>03 Oct 2026</time><b>v0.4.0</b><span>Public GitHub Pages migration; canonical evidence labels aligned with validation data and static release package added.</span></li>
+          <li><time>03 Oct 2026</time><b>data v0.5.0</b><span>Added provenance clusters, source-independence classes, search-state schema, search log and research-progress metadata. ABO claim values unchanged.</span></li>
+          <li><time>03 Oct 2026</time><b>UI v1.0.0</b><span>Added research funnel, coverage matrix, provenance/bias lab and deep-linkable record dossiers.</span></li>
         </ol>
       </article>
       <article class="release-card">
@@ -303,7 +394,11 @@
           <a href="./data/laureate-blood-type-claims.csv" download>Screening claims CSV ↓</a>
           <a href="./data/reference-populations.csv" download>Population baselines CSV ↓</a>
           <a href="./data/evidence-summary.json" download>Evidence summary JSON ↓</a>
+          <a href="./data/evidence-sources.csv" download>Source provenance CSV ↓</a>
+          <a href="./data/search-log.csv" download>Search log CSV ↓</a>
+          <a href="./data/DATA_DICTIONARY.md">Data dictionary →</a>
           <a href="./docs/METHODOLOGY.md">Methodology document →</a>
+          <a href="./docs/RESEARCH_AGENDA.md">Research agenda →</a>
           <a href="./docs/RESEARCH_NOTES.md">Research notes →</a>
         </div>
       </article>
@@ -317,6 +412,14 @@
     </div>
   </section>
 </main>
+
+<div class="dossier-modal" id="dossier-modal" hidden>
+  <div class="dossier-backdrop" data-dossier-close></div>
+  <article class="dossier-dialog" role="dialog" aria-modal="true" aria-labelledby="dossier-title">
+    <button class="dossier-close" type="button" aria-label="Close dossier" data-dossier-close>×</button>
+    <div id="dossier-content"></div>
+  </article>
+</div>
 
 <footer>
   <div class="shell footer-inner">
