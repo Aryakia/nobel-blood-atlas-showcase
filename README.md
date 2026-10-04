@@ -7,7 +7,7 @@
 ## Release identity
 
 - **Dataset:** v0.5.0
-- **Interface:** v1.1.0
+- **Interface:** v1.1.1
 - **Release date:** 3 October 2026
 
 Dataset and interface versions are separate. A visual redesign does not imply a change in the evidence corpus.
@@ -59,7 +59,7 @@ The 19 ABO claim values are unchanged. The release strengthens the research arch
 
 A key provenance result is that **15 of the 19 screening claims (78.9%) come from only two compilation source families**. That source concentration is a stronger empirical pattern than any defensible ABO pattern in the current sample.
 
-## Interactive interface v1.1.0
+## Interactive interface v1.1.1
 
 The public atlas now includes:
 
