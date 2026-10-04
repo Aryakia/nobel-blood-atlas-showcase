@@ -9,6 +9,29 @@
   <meta property="og:description" content="Sparse evidence should look sparse: an interactive evidence atlas for publicly reported Nobel laureate blood-type claims.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aryakia.github.io/nobel-blood-atlas-showcase/">
+  <meta name="citation_title" content="Nobel Blood Atlas: Evidence Mapping for Sparse and Selectively Documented Public Data">
+  <meta name="citation_author" content="Arya Kia">
+  <meta name="citation_date" content="2026-10-03">
+  <meta name="citation_public_url" content="https://aryakia.github.io/nobel-blood-atlas-showcase/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Nobel Blood Atlas",
+    "alternateName": "Nobel Blood Atlas dataset v0.5.0",
+    "description": "An evidence-first research dataset and interface for sparse, selectively documented public claims about Nobel laureate blood types, with provenance, missingness, contradictions and source dependence made explicit.",
+    "url": "https://aryakia.github.io/nobel-blood-atlas-showcase/",
+    "version": "0.5.0",
+    "datePublished": "2026-10-03",
+    "creator": {"@type": "Person", "name": "Arya Kia"},
+    "license": "https://github.com/Aryakia/nobel-blood-atlas-showcase",
+    "distribution": [
+      {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://aryakia.github.io/nobel-blood-atlas-showcase/data/laureate-blood-type-claims.csv"},
+      {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://aryakia.github.io/nobel-blood-atlas-showcase/data/evidence-sources.csv"}
+    ],
+    "isAccessibleForFree": true
+  }
+  </script>
   <link rel="canonical" href="https://aryakia.github.io/nobel-blood-atlas-showcase/">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/styles.css">
@@ -370,6 +393,14 @@
     <div class="section-heading">
       <div><p class="kicker">Open sourcebook</p><h2>Every analytical claim should be traceable</h2></div>
       <p>Sources include official Nobel identifiers, blood-service baselines, reputable reports and discovery compilations. Their roles are deliberately not treated as equivalent.</p>
+    </div>
+    <div class="contribute-banner">
+      <div>
+        <span>Public evidence review</span>
+        <strong>Found a better source or a contradiction?</strong>
+        <p>Use the public GitHub evidence form. Do not submit private medical records, contact information, leaked material or inferred blood types.</p>
+      </div>
+      <a href="https://github.com/Aryakia/nobel-blood-atlas-showcase/issues/new?template=public-evidence.yml">Submit a public evidence lead ↗</a>
     </div>
     <div id="source-list" class="source-list"></div>
 
