@@ -19,7 +19,7 @@ This repository is now the public, self-contained release of the project. It inc
 - methodology, research notes, sourcebook and version history;
 - the GitHub Pages deployment workflow.
 
-The site is static by design. It does **not** depend on ChatGPT Sites, Cloudflare D1, a server-side API or a private database.
+The active site is static by design. It does **not** depend on ChatGPT Sites, Cloudflare D1, a server-side API or a private database. The core source of the former Next.js/D1 implementation is retained under `legacy-site-source/` so the previous implementation is not lost.
 
 ## Current evidence snapshot
 
@@ -58,7 +58,8 @@ data/
 docs/
   METHODOLOGY.md                   Research protocol and interpretation rules
   RESEARCH_NOTES.md                Findings, negative results and version notes
-  VISUAL_CASE_STUDY.md             Earlier public evidence-workflow documentation
+  VISUAL_CASE_STUDY.md             Public evidence-workflow documentation
+legacy-site-source/                 Archived core source of the former Next.js/D1 Site
 .github/workflows/pages.yml        GitHub Pages deployment
 ```
 
