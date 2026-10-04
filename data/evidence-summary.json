@@ -1,12 +1,24 @@
 {
-  "dataset_version": "0.4.0",
+  "dataset_version": "0.5.0",
+  "interface_version": "1.0.0",
   "release_date": "2026-10-03",
   "confirmed": 0,
   "reported_secondary_source": 4,
   "unverified": 15,
   "conflicting_excluded": 3,
-  "unknown_or_unsearched": 970,
+  "legacy_unresolved_pool": 970,
   "person_laureate_denominator_snapshot": 992,
   "screening_claims": 19,
-  "warning": "Reported-secondary records are public person-level reports, not medical-record confirmation. Unverified and conflicting claims are excluded from the stronger-source subset. The sample is sparse and non-random."
+  "tracked_claim_or_conflict_records": 22,
+  "source_independence": {
+    "score_0": 15,
+    "score_1": 4,
+    "score_2": 0,
+    "score_3": 0
+  },
+  "provenance_concentration": {
+    "claims_from_two_compilation_families": 15,
+    "share_percent": 78.9
+  },
+  "warning": "The 970 legacy unresolved records cannot be honestly split into not-yet-searched versus searched-with-no-public-record from current documentation. Reported-secondary records are public person-level reports, not medical confirmation. The observed sample is sparse, selected, source-dependent and non-random."
 }
