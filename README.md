@@ -1,131 +1,81 @@
-# Nobel Blood Atlas — Public Showcase
+# Nobel Blood Atlas
 
-**An evidence-graded research dashboard for exploring publicly reported Nobel laureate blood types while keeping missing data, contradictory claims, and documentation bias visible.**
+**Nobel Blood Atlas** is an evidence-first research atlas for publicly reported Nobel laureate blood-type claims. The project is designed around a methodological principle: **sparse evidence should look sparse**.
 
-[View the public evidence-review diagram and limitations](docs/VISUAL_CASE_STUDY.md) · [Public case-study page](index.html)
+Public GitHub Pages site: **https://aryakia.github.io/nobel-blood-atlas-showcase/**
 
-| | |
-|---|---|
-| **Project type** | Evidence mapping · data quality · research dashboard |
-| **Role** | Creator and developer |
-| **Status** | Research prototype |
-| **Live application** | https://nobel-blood-atlas.aryakia97.chatgpt.site |
-| **Canonical source** | Private application repository |
-| **Public disclosure** | Methods, interface design, technology, aggregate scope, and evidence rules only |
+## What this repository contains
 
----
+This repository is now the public, self-contained release of the project. It includes:
 
-## Executive summary
+- the complete static GitHub Pages website;
+- the 19-record public screening ledger and its person-specific source links;
+- evidence-state counts and the 992 person-laureate denominator snapshot;
+- the three conflicting records excluded from calculations;
+- five population ABO reference datasets;
+- field-level research-queue accounting;
+- high-school-country context from the earlier research interface;
+- sensitivity checks and the predeclared statistical-analysis gate;
+- methodology, research notes, sourcebook and version history;
+- the GitHub Pages deployment workflow.
 
-Nobel Blood Atlas is an experiment in **responsible analysis of sparse public data**.
+The site is static by design. It does **not** depend on ChatGPT Sites, Cloudflare D1, a server-side API or a private database.
 
-Blood-type information for Nobel laureates is rarely disclosed, inconsistently documented, and strongly affected by country, language, and cultural documentation patterns. Rather than presenting the records that can be found as if they were a complete census, the project makes **missingness, provenance, evidence strength, contradictions, and selection bias part of the interface**.
+## Current evidence snapshot
 
-The core design principle is simple: **sparse evidence should look sparse**.
+| Evidence state | Count | Meaning |
+| --- | ---: | --- |
+| Confirmed | 0 | Independent medical or direct confirmation in the current release |
+| Reported secondary source | 4 | Explicit person-level public reporting, but not medical confirmation |
+| Unverified | 15 | Discovery/compilation leads requiring stronger sourcing |
+| Conflicting, excluded | 3 | Contradictory claims retained for audit and excluded from calculations |
+| Unknown or unsearched | 970 | No defensible public claim in this snapshot |
+| Denominator snapshot | 992 | Person-laureate research frame |
 
-## Coverage and analytical views
+The four reported-secondary records are **not described as medically confirmed**.
 
-The working application supports subject-level filtering across the six Nobel categories:
+## Core research rules
 
-- Physics
-- Chemistry
-- Physiology or Medicine
-- Literature
-- Peace
-- Economic Sciences
-
-Selected contextual population baselines include:
-
-- World
-- Japan
-- United States
-- Canada
-- South Korea
-
-These baselines are used for contextual observed-versus-expected views—not for making biological claims from the current non-random sample.
-
-## Evidence model
-
-### Explicit evidence grades
-
-Records are not treated as equally reliable. Each claim can retain an evidence grade, source link, and explanatory note.
-
-### Contradictions remain visible
-
-If public sources conflict, the contradiction is preserved for audit instead of selecting whichever claim appears most often. Conflicting records are excluded from analytical calculations until resolved.
-
-### Unknown is a valid state
-
-The research queue distinguishes among:
-
-- corroborated reports
-- leads requiring review
-- conflicting records
-- unknown / no defensible public record found
-
-This prevents missingness from disappearing during data cleaning.
-
-### Screened vs corroborated views
-
-The interface separates broad screening results from stronger corroborated evidence so users can see how conclusions change as the evidence threshold changes.
-
-## Research principles
-
-1. **Never infer blood type** from nationality, ancestry, personality, name, appearance, or any other proxy.
-2. A laureate enters the analytical evidence set only when a source explicitly connects that individual to a blood type.
+1. Never infer blood type from nationality, ancestry, personality, name, appearance or any proxy.
+2. A laureate enters the screening ledger only when a source explicitly links that individual to a blood type.
 3. Conflicting claims remain visible and are excluded from calculations until resolved.
-4. Population comparisons are contextual; the observed sample is sparse and non-random.
-5. Documentation bias is treated as a research limitation, not a footnote.
+4. Unknown is a valid research state and must remain visible.
+5. Population distributions are contextual references, not exchangeable control populations.
+6. The current observed sample is sparse, selected and non-random; it does not support biological claims about Nobel achievement.
 
-## What I built
+## Repository structure
 
-- category-level filtering across all Nobel disciplines
-- observed-versus-expected ABO comparisons
-- separate screened and corroborated evidence views
-- searchable and sortable evidence ledger
-- explicit evidence grades, notes, and source links
-- contradiction tracking and exclusion logic
-- selected population-baseline comparisons
-- high-school-country exploration with documentation-bias warnings
-- full research queue for corroborated, lead, conflicting, and unknown records
-- downloadable versioned CSV data
-- evidence-submission workflow with review before publication
-- methodology, sensitivity guidance, sourcebook, and dataset changelog
+```text
+index.html                         Static GitHub Pages application
+assets/
+  styles.css                       Responsive visual system
+  app.js                           Filters, charts and evidence ledger
+data/
+  laureate-blood-type-claims.csv  Public screening ledger
+  reference-populations.csv       ABO contextual baselines
+  evidence-summary.json           Canonical evidence-state counts
+  conflicts.csv                   Explicit contradiction ledger
+docs/
+  METHODOLOGY.md                   Research protocol and interpretation rules
+  RESEARCH_NOTES.md                Findings, negative results and version notes
+  VISUAL_CASE_STUDY.md             Earlier public evidence-workflow documentation
+.github/workflows/pages.yml        GitHub Pages deployment
+```
 
-## Technical architecture
+## Why the project matters
 
-The working application uses:
+The substantive topic is unusual, but the broader research problem is common: public datasets can be incomplete, selectively documented, contradictory and uneven across languages and countries. A conventional dashboard can make those weaknesses disappear. Nobel Blood Atlas instead treats **provenance, evidence quality, contradiction handling and missingness as part of the data model and part of the user interface**.
 
-- Next.js 16
-- React 19
-- TypeScript
-- Vite-compatible build tooling
-- Cloudflare-compatible server output
-- Cloudflare D1 for the review-only evidence-submission workflow
-- Drizzle ORM
-- responsive semantic HTML/CSS
+The transferable workflow is:
 
-New public submissions do **not** automatically modify the analytical dataset. They enter a review process first, preserving a separation between user-submitted leads and published evidence.
-
-## Why this project matters
-
-The subject is deliberately secondary to the methodological question: **how should an interface behave when the available evidence is incomplete, contradictory, and selectively documented?**
-
-Nobel Blood Atlas demonstrates a pattern that can transfer to other research products:
-
-**source provenance → evidence grade → contradiction handling → explicit missingness → sensitivity-aware interpretation**
-
-## Limitations
-
-The current dataset is a **screening dataset**, not a complete medical dataset of Nobel laureates. Most public profiles do not disclose blood type, disclosure practices vary substantially across countries and languages, and available observations are not a representative sample.
-
-The interface therefore avoids strong statistical or biological conclusions from the current evidence.
+**source provenance → evidence state → contradiction handling → explicit missingness → contextual comparison → sensitivity-aware interpretation**
 
 ## Public/private boundary
 
-This showcase does **not** expose private source code, live database contents, submitted contact information, pending evidence, credentials, deployment bindings, environment configuration, or internal review material. It publishes only deliberately selected project architecture, methods, public interface features, and research safeguards.
+This public release intentionally excludes contact information, pending visitor submissions, credentials, live database contents and deployment secrets. Those are operational/private data, not research outputs. The public analytical material consists only of deliberately released public-source claims and contextual datasets.
 
 ## Author
 
-**Arya Kia**  
-Evidence mapping · data visualization · research methods
+Created by **Arya Kia**.
+
+Evidence mapping · data quality · research visualization
