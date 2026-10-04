@@ -8,7 +8,15 @@ The strongest research question is not:
 
 The current public corpus cannot answer that question.
 
-The stronger question is:
+The project now carries two linked questions.
+
+The substantive question is:
+
+> **After accounting for the population composition of Nobel laureates and the non-random documentation of blood type, does the observed ABO distribution differ meaningfully from its expected distribution?**
+
+The current corpus cannot answer it.
+
+The methodological question is:
 
 > **How should researchers collect, grade, model, and visualize a sparse, multilingual, selectively documented public evidence corpus when missingness and source dependence are themselves part of the phenomenon?**
 
@@ -34,7 +42,26 @@ Move from a flat row model to:
 
 This makes copied claims visible. A dozen websites repeating one unsourced list should count as one provenance family, not twelve independent confirmations.
 
-## Workstream 3 — Documentation-bias model
+## Workstream 3 — Composition-adjusted null expectation
+
+The world-average ABO distribution should not be treated as the primary expected distribution for Nobel laureates. Nobel laureates are not a random sample of the world population, and ABO prevalence differs across populations.
+
+For blood type t, the intended expectation is:
+
+**E_t = Σ_i p_i,t**
+
+where p_i,t is the predeclared ABO probability for laureate i under the most defensible reference population available.
+
+Preferred reference hierarchy:
+
+1. person-specific population/ancestry evidence where defensible;
+2. appropriate regional or population reference;
+3. country proxy when justified;
+4. global fallback.
+
+The project must never infer ancestry from a name, appearance, school country or nationality, and broad racial categories should not be used as a convenient substitute for a defensible population reference.
+
+## Workstream 4 — Documentation-bias model
 
 Once the denominator has suitable covariates, estimate the probability that a laureate has a public ABO record.
 
@@ -51,7 +78,7 @@ Candidate predictors:
 
 A logistic model is appropriate only after the covariate dataset and search protocol are sufficiently complete.
 
-## Workstream 4 — Source independence
+## Workstream 5 — Source independence
 
 Use a transparent ordinal score:
 
@@ -62,7 +89,7 @@ Use a transparent ordinal score:
 
 The score should never be increased merely because a claim is repeated across derivative pages.
 
-## Workstream 5 — Reproducible releases
+## Workstream 6 — Reproducible releases
 
 For every material dataset release:
 
@@ -74,7 +101,7 @@ For every material dataset release:
 6. archive a citable snapshot;
 7. connect the repository to Zenodo if a DOI is desired.
 
-## Workstream 6 — Publication pathway
+## Workstream 7 — Publication pathway
 
 A publishable methods paper could focus on:
 
