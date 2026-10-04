@@ -1,0 +1,17 @@
+name: Validate Nobel Blood Atlas data
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate public research data
+        run: node scripts/validate-public-data.mjs
