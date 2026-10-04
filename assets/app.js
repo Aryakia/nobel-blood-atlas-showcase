@@ -69,10 +69,10 @@ function renderAnalysis(){
     const expected=rows.length*base[t]/100;
     return '<div class="comparison-row"><span class="type-badge" style="background:'+COLORS[t]+'">'+t+'</span><div class="comparison-bars">'+
       '<div class="comparison-line"><span>Observed</span><div class="track"><div class="fill" style="width:'+(counts[t]/max*100)+'%;background:'+COLORS[t]+'"></div></div><b>'+counts[t]+'</b></div>'+
-      '<div class="comparison-line"><span>Expected</span><div class="track"><div class="fill expected" style="width:'+(expected/max*100)+'%"></div></div><b>'+expected.toFixed(2)+'</b></div>'+
+      '<div class="comparison-line"><span>Contextual</span><div class="track"><div class="fill expected" style="width:'+(expected/max*100)+'%"></div></div><b>'+expected.toFixed(2)+'</b></div>'+
       '</div></div>';
   }).join("");
-  document.getElementById("baseline-note").textContent=base.note+" This reference is contextual and is not evidence that every screened person belongs to that population.";
+  document.getElementById("baseline-note").textContent=base.note+" This is a contextual scenario reference, not the composition-adjusted null expectation. The intended benchmark requires defensible person-level or population-specific matching across the Nobel denominator.";
   const link=document.getElementById("baseline-link");link.href=base.source;
   document.getElementById("name-chips").innerHTML=rows.map(function(r){return"<span>"+esc(r.name)+" · "+r.blood+"</span>";}).join("");
   const copy=rows.length<5?"Too few stronger-source records for meaningful inference.":"The sample remains selected and non-random; descriptive differences should not be interpreted biologically.";
