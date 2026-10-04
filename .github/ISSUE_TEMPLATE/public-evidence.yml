@@ -1,0 +1,80 @@
+name: Public evidence lead
+description: Submit a public, person-specific source for review. GitHub issues are public.
+title: "[Evidence] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the evidence trail.
+
+        **Only submit information already appropriate for public research review.**
+        Do not submit private medical records, leaked material, personal contact information, or an inferred blood type. A source must explicitly connect a named Nobel laureate to an ABO type.
+
+  - type: input
+    id: laureate
+    attributes:
+      label: Nobel laureate
+      description: Full name of the laureate.
+      placeholder: Yoshinori Ohsumi
+    validations:
+      required: true
+
+  - type: dropdown
+    id: blood_type
+    attributes:
+      label: ABO type reported by the source
+      options:
+        - A
+        - B
+        - AB
+        - O
+        - Source discusses blood donation but does not disclose type
+        - Conflicting / unclear
+    validations:
+      required: true
+
+  - type: input
+    id: source_url
+    attributes:
+      label: Public source URL
+      description: Link to the person-specific public source.
+      placeholder: https://example.org/interview
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Source type
+      options:
+        - First-person statement
+        - Medical or blood-service public record
+        - Reputable news report
+        - Biography or interview
+        - Compilation / lead
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: support
+    attributes:
+      label: What exactly does the source support?
+      description: Describe where the source states the blood type and any relevant context. Do not paste long copyrighted passages.
+    validations:
+      required: true
+
+  - type: textarea
+    id: contradictions
+    attributes:
+      label: Known contradictory sources
+      description: Add links or notes if another public source reports a different type.
+
+  - type: checkboxes
+    id: attest
+    attributes:
+      label: Public-evidence check
+      options:
+        - label: I confirm that I am not submitting private medical information, personal contact information, or an inferred claim.
+          required: true
