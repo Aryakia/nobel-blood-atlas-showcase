@@ -4,6 +4,14 @@ All notable public research and interface changes are documented here.
 
 Dataset and interface versions are independent.
 
+## Interface v1.1.1 — 2026-10-03
+
+- rewrote the project-origin section in a first-person research voice;
+- removed the six-stage, highly schematic progression block;
+- replaced artificial labels such as “first correction,” “second correction,” and “methodologically preferred” with plainer language;
+- kept the weighted-comparison logic and selection-bias explanation unchanged;
+- simplified the current research question and the explanation of what must happen before inferential testing.
+
 ## Interface v1.1.0 — 2026-10-03
 
 - added a restrained project-origin narrative beginning with the blood-donation curiosity;
