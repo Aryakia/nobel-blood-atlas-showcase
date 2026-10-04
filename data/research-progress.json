@@ -1,0 +1,19 @@
+{
+  "dataset_version": "0.5.0",
+  "interface_version": "1.0.0",
+  "release_date": "2026-10-03",
+  "research_frame": 992,
+  "named_screening_claims": 19,
+  "reported_secondary_source": 4,
+  "confirmed": 0,
+  "conflicting_excluded": 3,
+  "legacy_unresolved_pool": 970,
+  "tracked_claim_or_conflict_records": 22,
+  "provenance_concentration": {
+    "claims_from_two_compilation_families": 15,
+    "screening_claims_total": 19,
+    "share_percent": 78.9,
+    "source_families": ["abo_bible", "abo_fan"]
+  },
+  "note": "The 970 legacy unresolved records cannot honestly be split into not-yet-searched versus searched-with-no-record from the current documentation. v0.5.0 introduces a search-log protocol for future classification."
+}
