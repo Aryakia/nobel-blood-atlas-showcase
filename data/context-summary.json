@@ -1,0 +1,36 @@
+{
+  "high_school_context": {
+    "structured_records": 224,
+    "unique_laureates": 193,
+    "countries": 17,
+    "top_documented_countries": {
+      "United States": 155,
+      "Canada": 12,
+      "Australia": 5,
+      "South Africa": 3,
+      "Germany": 2,
+      "Hungary": 2,
+      "China": 2,
+      "Romania": 2
+    },
+    "unique_laureates_by_prize_field": {
+      "Physics": 52,
+      "Medicine": 51,
+      "Economics": 38,
+      "Chemistry": 34,
+      "Peace": 9,
+      "Literature": 9
+    },
+    "warning": "This is a discovery/documentation dataset and must not be used as a proxy for ancestry."
+  },
+  "global_abo_rh_reference_percent": {
+    "O+": 38.67,
+    "A+": 27.42,
+    "B+": 22.02,
+    "AB+": 5.88,
+    "O-": 2.55,
+    "A-": 1.99,
+    "B-": 1.11,
+    "AB-": 0.36
+  }
+}
