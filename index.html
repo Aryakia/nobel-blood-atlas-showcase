@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aryakia.github.io/nobel-blood-atlas-showcase/">
   <link rel="canonical" href="https://aryakia.github.io/nobel-blood-atlas-showcase/">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/styles.css">
   <title>Nobel Blood Atlas — Arya Kia</title>
 </head>
@@ -49,18 +50,33 @@
           <p><strong>No blood type is inferred.</strong> Nationality, ancestry, name, appearance, personality and school country are never substitutes for person-specific evidence.</p>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Dataset status">
-        <div class="hero-card-kicker">Current evidence snapshot</div>
-        <div class="hero-stat hero-stat-wide">
-          <strong>992</strong><span>person-laureate denominator snapshot</span>
+      <aside class="hero-card evidence-profile" aria-label="Dataset evidence profile">
+        <div class="hero-card-top">
+          <div>
+            <div class="hero-card-kicker">Evidence profile</div>
+            <p>Current public research snapshot</p>
+          </div>
+          <span class="release-badge">v0.4.0</span>
         </div>
-        <div class="mini-grid">
-          <div><strong>19</strong><span>screening claims</span></div>
-          <div><strong>4</strong><span>reported secondary</span></div>
-          <div><strong>0</strong><span>confirmed</span></div>
-          <div><strong>3</strong><span>conflicts excluded</span></div>
+
+        <div class="evidence-ring-layout">
+          <div class="evidence-ring" role="img" aria-label="Of 992 person-laureate records, 970 are unknown or unsearched, 15 are unverified claims, 4 are reported secondary sources, and 3 are conflicting and excluded.">
+            <div class="ring-center"><strong>97.8%</strong><span>unknown or<br>unsearched</span></div>
+          </div>
+          <div class="evidence-legend">
+            <div><i class="legend-swatch unknown"></i><span>Unknown / unsearched</span><b>970</b></div>
+            <div><i class="legend-swatch unverified"></i><span>Unverified</span><b>15</b></div>
+            <div><i class="legend-swatch reported"></i><span>Reported secondary</span><b>4</b></div>
+            <div><i class="legend-swatch conflict"></i><span>Conflict / excluded</span><b>3</b></div>
+          </div>
         </div>
-        <p class="microcopy">The remaining <strong>970</strong> records are unknown or unsearched in this snapshot. “Reported secondary” is not medical confirmation.</p>
+
+        <div class="hero-metrics">
+          <div><span>Research frame</span><strong>992</strong></div>
+          <div><span>Screening claims</span><strong>19</strong></div>
+          <div><span>Confirmed</span><strong>0</strong></div>
+        </div>
+        <p class="microcopy"><strong>Interpretation first:</strong> the visual is dominated by missingness because the underlying evidence is. Reported-secondary records are public reports, not medical confirmation.</p>
       </aside>
     </div>
   </section>
