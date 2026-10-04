@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aryakia.github.io/nobel-blood-atlas-showcase/sitemap.xml
