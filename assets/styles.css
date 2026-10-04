@@ -981,3 +981,47 @@ footer{background:#e2e5df}
   .coverage-matrix{overflow:auto}
   .matrix-row{min-width:620px}
 }
+
+.contribute-banner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:22px;
+  padding:19px 21px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:linear-gradient(110deg,#fff,#f4f0e4);
+  box-shadow:0 8px 24px rgba(16,35,43,.045);
+}
+.contribute-banner>div{max-width:760px}
+.contribute-banner span{
+  display:block;
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:.58rem;
+  font-weight:900;
+}
+.contribute-banner strong{
+  display:block;
+  margin-top:3px;
+  font-family:"Iowan Old Style","Palatino Linotype",Baskerville,Georgia,serif;
+  font-size:1.2rem;
+  font-weight:500;
+}
+.contribute-banner p{margin:4px 0 0;color:var(--muted);font-size:.68rem}
+.contribute-banner>a{
+  flex:0 0 auto;
+  border:1px solid #bac8c8;
+  border-radius:9px;
+  padding:9px 11px;
+  background:#fff;
+  color:#326d7e;
+  text-decoration:none;
+  font-size:.67rem;
+  font-weight:900;
+}
+@media(max-width:680px){
+  .contribute-banner{align-items:flex-start;flex-direction:column}
+}
