@@ -7,7 +7,7 @@
 ## Release identity
 
 - **Dataset:** v0.5.0
-- **Interface:** v1.0.0
+- **Interface:** v1.1.0
 - **Release date:** 3 October 2026
 
 Dataset and interface versions are separate. A visual redesign does not imply a change in the evidence corpus.
@@ -16,11 +16,19 @@ Dataset and interface versions are separate. A visual redesign does not imply a 
 
 The project does **not** currently ask whether Nobel laureates have unusual blood types; the evidence is far too sparse and selectively documented for that inference.
 
-The stronger research question is:
+The project now distinguishes two complementary research questions.
+
+**Substantive question**
+
+> **After accounting for the population composition of Nobel laureates and the non-random documentation of blood type, does the observed ABO distribution differ meaningfully from its expected distribution?**
+
+The current answer is: **not yet testable**.
+
+**Methods question**
 
 > **How should researchers collect, grade, model and visualize a sparse, multilingual, selectively documented public evidence corpus when missingness and source dependence are themselves part of the phenomenon?**
 
-Nobel blood-type reporting is the case study through which that question is explored.
+Nobel blood-type reporting is the case study through which that methods question is explored.
 
 ## Current evidence snapshot
 
@@ -51,10 +59,15 @@ The 19 ABO claim values are unchanged. The release strengthens the research arch
 
 A key provenance result is that **15 of the 19 screening claims (78.9%) come from only two compilation source families**. That source concentration is a stronger empirical pattern than any defensible ABO pattern in the current sample.
 
-## Interactive interface v1.0.0
+## Interactive interface v1.1.0
 
 The public atlas now includes:
 
+- a research-origin narrative explaining how the question changed;
+- a composition-adjusted counterfactual and weighting equation;
+- a two-stage selection model separating Nobel selection from documentation selection;
+- an explicit distinction between contextual population references and the future adjusted null expectation;
+- a locked future-test pathway with three prerequisite research conditions;
 - evidence-profile visualization;
 - observed-versus-expected descriptive views;
 - selectable evidence threshold and five population baselines;
