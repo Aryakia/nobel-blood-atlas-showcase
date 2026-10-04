@@ -80,20 +80,22 @@ The current screening corpus is highly concentrated: **15 of 19 claims (78.9%) c
 
 This is substantively important. It means the dominant empirical feature of the current corpus is not an ABO distribution; it is source dependence.
 
-## 9. Population baselines
+## 9. Population baselines and the null benchmark
 
 Five contextual ABO baselines are preserved separately: Global, Japan, United States, Canada and South Korea.
 
 They are never pooled into a synthetic universal control.
 
+The global baseline is **not** the preferred null expectation for Nobel laureates. Nobel laureates are a selected population whose geographic, historical and population composition differs from humanity as a whole. Because ABO prevalence varies across populations, a direct Nobel-versus-world comparison can confound population composition with any apparent Nobel-associated difference.
+
 Preferred matching hierarchy:
 
-1. self-report or medical source;
-2. explicitly sourced ancestry/population context;
-3. country proxy;
+1. person-specific population/ancestry evidence where defensible;
+2. appropriate regional or population reference;
+3. country proxy when justified;
 4. global fallback.
 
-Ancestry is never inferred from name, nationality, appearance or school location.
+Ancestry is never inferred from name, nationality, appearance or school location. Broad racial categories are also too coarse to serve as a substitute for defensible population matching.
 
 ## 10. Expected-count framework
 
@@ -103,7 +105,9 @@ E(f,t) = sum over laureates i of p(i,t)
 
 where p(i,t) is the predeclared prevalence of blood type t in the matching population assigned to laureate i.
 
-This remains descriptive until the evidence, search coverage and source-independence conditions are satisfied.
+This composition-adjusted framework is the intended null benchmark, but it remains descriptive until the evidence, denominator covariates, search coverage and source-independence conditions are satisfied.
+
+The interactive website's selectable Global/Japan/United States/Canada/South Korea views are therefore labelled **contextual references**, not the final adjusted expectation.
 
 ## 11. Statistical analysis gate
 
@@ -118,7 +122,12 @@ The interface blocks inferential testing. The current working requirements inclu
 
 The current corpus does not approach those conditions.
 
-## 12. Missingness and documentation bias
+## 12. Two-stage selection and documentation bias
+
+The project recognizes two separate selection mechanisms:
+
+1. **Human population → Nobel laureates.** Nobel laureates are not demographically or institutionally representative of humanity.
+2. **Nobel laureates → publicly discoverable ABO records.** Public documentation is itself selective.
 
 Missingness is plausibly **missing not at random**. Public ABO disclosure can vary by language, country, culture, media practice, time period and public prominence.
 
