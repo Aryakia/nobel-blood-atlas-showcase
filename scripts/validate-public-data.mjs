@@ -31,7 +31,7 @@ const summary = JSON.parse(readFileSync(new URL("../data/evidence-summary.json",
 const version = JSON.parse(readFileSync(new URL("../data/version.json", import.meta.url), "utf8"));
 
 assert.equal(version.dataset, "0.5.0");
-assert.equal(version.interface, "1.1.0");
+assert.equal(version.interface, "1.1.1");
 assert.equal(summary.dataset_version, version.dataset);
 assert.equal(summary.interface_version, version.interface);
 
@@ -94,4 +94,4 @@ for (const row of provenance) {
 }
 
 console.log("Public data validation passed.");
-console.log("Dataset v0.5.0 | UI v1.1.0 | 19 claims | 4 reported-secondary | 15 unverified | 3 conflicts | 970 legacy unresolved.");
+console.log("Dataset v0.5.0 | UI v1.1.1 | 19 claims | 4 reported-secondary | 15 unverified | 3 conflicts | 970 legacy unresolved.");
