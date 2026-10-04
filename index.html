@@ -1,1 +1,315 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Nobel Blood Atlas — an evidence-graded research dashboard for sparse and contradictory public data."><title>Nobel Blood Atlas — Arya Kia</title><style>:root{--bg:#101216;--panel:#171b21;--panel2:#13171c;--text:#f5f7fa;--muted:#b4bdc9;--line:#2d3540;--accent:#e6c66f;--accent2:#87b8ff;--good:#8ad4ad}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 82% 0,#1f2630 0,#101216 42%);color:var(--text);line-height:1.65}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.hero{padding:88px 0 50px}.eyebrow,.label{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}.eyebrow{color:var(--accent)}.label{color:var(--accent2)}h1{font-size:clamp(3rem,8vw,6rem);line-height:.95;margin:.45rem 0 1rem}h2{font-size:clamp(1.7rem,4vw,2.45rem);margin:.3rem 0 1rem}.hero p,.section p{color:var(--muted)}.hero p{max-width:850px;font-size:1.1rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;text-decoration:none;border-radius:12px;padding:11px 16px;font-weight:750}.primary{background:var(--accent);color:#17130a}.secondary{border:1px solid var(--line)}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.metric{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel),var(--panel2));border-radius:17px;padding:18px}.metric b{display:block;font-size:1.65rem;color:var(--accent);line-height:1.1}.metric span{color:var(--muted);font-size:.86rem}.section{padding:34px 0 64px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:22px}.card h3{margin:.1rem 0 .5rem}.card p{margin:.4rem 0}.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.rule{border-left:3px solid var(--good);padding:10px 0 10px 16px;color:var(--muted)}.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:18px}.step{border-top:2px solid var(--accent2);padding-top:12px;color:var(--muted);font-size:.9rem}.note{border:1px solid #4c4430;background:#1c1912;border-radius:18px;padding:22px;color:#d8cfbb}.boundary{border:1px solid var(--line);background:rgba(23,27,33,.76);border-radius:18px;padding:24px}footer{border-top:1px solid var(--line);padding:30px 0 52px;color:#858e99;font-size:.9rem}@media(max-width:850px){.metrics{grid-template-columns:repeat(2,1fr)}.grid,.rules{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr}.wrap{width:min(100% - 28px,1160px)}}@media(max-width:500px){.metrics{grid-template-columns:1fr}}</style></head><body><main><section class="hero"><div class="wrap"><div class="eyebrow">Public Evidence-Quality Showcase</div><h1>Nobel Blood Atlas</h1><p>An evidence-graded research dashboard built around a simple rule: sparse data should look sparse. Missingness, provenance, conflicting claims, and documentation bias remain visible rather than being hidden behind a polished chart.</p><div class="actions"><a class="btn primary" href="https://nobel-blood-atlas.aryakia97.chatgpt.site">Open live application →</a><a class="btn secondary" href="https://github.com/Aryakia/nobel-blood-atlas-showcase">GitHub showcase</a></div><div class="metrics"><div class="metric"><b>6</b><span>Nobel prize categories supported</span></div><div class="metric"><b>5</b><span>selected contextual population baselines</span></div><div class="metric"><b>4</b><span>core evidence states: corroborated, lead, conflicting, unknown</span></div><div class="metric"><b>Review-first</b><span>submissions do not automatically enter analysis</span></div></div></div></section><section class="section"><div class="wrap"><div class="label">Research rules</div><h2>Evidence before inference.</h2><div class="rules"><div class="rule">Never infer blood type from nationality, ancestry, personality, name, appearance, or any proxy.</div><div class="rule">A laureate enters the analytical evidence set only when a source explicitly connects that individual to a blood type.</div><div class="rule">Conflicting claims stay visible and are excluded from calculations until resolved.</div><div class="rule">Population comparisons are contextual; the observed sample is sparse and non-random.</div></div></div></section><section class="section"><div class="wrap"><div class="label">Coverage</div><h2>Research dashboard + evidence ledger</h2><div class="grid"><article class="card"><h3>Six prize categories</h3><p>Physics, Chemistry, Physiology or Medicine, Literature, Peace, and Economic Sciences.</p></article><article class="card"><h3>Evidence grades</h3><p>Records preserve source quality and explanatory notes instead of treating all claims as equivalent.</p></article><article class="card"><h3>Contradiction tracking</h3><p>Conflicting public reports stay available for audit rather than being silently resolved.</p></article><article class="card"><h3>ABO comparisons</h3><p>Observed-versus-expected views are shown together with coverage and selection-bias warnings.</p></article><article class="card"><h3>Five baselines</h3><p>Contextual comparisons include World, Japan, United States, Canada, and South Korea.</p></article><article class="card"><h3>Versioned research queue</h3><p>Corroborated, lead, conflicting, unknown, and downloadable records remain part of the visible workflow.</p></article></div></div></section><section class="section"><div class="wrap"><div class="label">Method pattern</div><h2>Make uncertainty part of the product.</h2><div class="pipeline"><div class="step"><strong>Source provenance</strong><br>Who says what?</div><div class="step"><strong>Evidence grade</strong><br>How strong is the support?</div><div class="step"><strong>Contradiction handling</strong><br>Do sources disagree?</div><div class="step"><strong>Explicit missingness</strong><br>What is still unknown?</div><div class="step"><strong>Sensitivity-aware interpretation</strong><br>How much depends on evidence thresholds?</div></div></div></section><section class="section"><div class="wrap note"><strong>Interpretation boundary:</strong> the current dataset is a screening dataset, not a complete medical dataset of Nobel laureates. Disclosure differs substantially by country and language, and the observed records are not representative enough for strong biological conclusions.</div></section><section class="section"><div class="wrap"><div class="label">Technical architecture</div><h2>Built for reviewable research data.</h2><p>The working application uses Next.js 16, React 19, TypeScript, Cloudflare-compatible delivery, D1, and Drizzle ORM. Evidence submissions enter a review workflow rather than modifying the published analytical dataset automatically.</p></div></section><section class="section"><div class="wrap boundary"><div class="label">Disclosure boundary</div><h2>Public method, private operational data.</h2><p>The showcase excludes source code, live database contents, submitted contact information, pending evidence, credentials, deployment bindings, environment configuration, and internal review material.</p></div></section></main><footer><div class="wrap">Arya Kia · Evidence mapping · data visualization · research methods</div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nobel Blood Atlas is an evidence-first research atlas of publicly reported Nobel laureate blood-type claims, with missingness, provenance, contradictions and selection bias made explicit.">
+  <meta name="theme-color" content="#0a1820">
+  <meta property="og:title" content="Nobel Blood Atlas">
+  <meta property="og:description" content="Sparse evidence should look sparse: an interactive evidence atlas for publicly reported Nobel laureate blood-type claims.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aryakia.github.io/nobel-blood-atlas-showcase/">
+  <link rel="canonical" href="https://aryakia.github.io/nobel-blood-atlas-showcase/">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <title>Nobel Blood Atlas — Arya Kia</title>
+</head>
+<body>
+<a class="skip-link" href="#analysis">Skip to analysis</a>
+
+<header class="site-header" id="top">
+  <div class="shell nav">
+    <a class="brand" href="#top" aria-label="Nobel Blood Atlas home">
+      <span class="brand-mark">N</span>
+      <span>Nobel Blood Atlas</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#analysis">Analysis</a>
+      <a href="#ledger">Evidence ledger</a>
+      <a href="#queue">Research queue</a>
+      <a href="#method">Method</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <a class="button button-small" href="./data/laureate-blood-type-claims.csv" download>Download data</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Evidence atlas · public research release v0.4.0</p>
+        <h1>When the evidence is sparse, the interface should say so.</h1>
+        <p class="lede">Nobel Blood Atlas maps publicly reported blood-type claims about Nobel laureates while keeping provenance, uncertainty, contradictions, documentation bias and missingness visible. It is a research-methods project first—not a claim that blood type explains achievement.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#analysis">Explore the atlas</a>
+          <a class="button" href="https://github.com/Aryakia/nobel-blood-atlas-showcase">View source on GitHub</a>
+        </div>
+        <div class="hero-rule">
+          <span class="rule-icon">!</span>
+          <p><strong>No blood type is inferred.</strong> Nationality, ancestry, name, appearance, personality and school country are never substitutes for person-specific evidence.</p>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Dataset status">
+        <div class="hero-card-kicker">Current evidence snapshot</div>
+        <div class="hero-stat hero-stat-wide">
+          <strong>992</strong><span>person-laureate denominator snapshot</span>
+        </div>
+        <div class="mini-grid">
+          <div><strong>19</strong><span>screening claims</span></div>
+          <div><strong>4</strong><span>reported secondary</span></div>
+          <div><strong>0</strong><span>confirmed</span></div>
+          <div><strong>3</strong><span>conflicts excluded</span></div>
+        </div>
+        <p class="microcopy">The remaining <strong>970</strong> records are unknown or unsearched in this snapshot. “Reported secondary” is not medical confirmation.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="status-strip" aria-label="Evidence status">
+    <div class="shell status-grid">
+      <article><span class="status-dot confirmed"></span><div><b>Confirmed</b><strong>0</strong><small>medical/first-person confirmation</small></div></article>
+      <article><span class="status-dot reported"></span><div><b>Reported secondary</b><strong>4</strong><small>explicit published person-level reports</small></div></article>
+      <article><span class="status-dot unverified"></span><div><b>Unverified</b><strong>15</strong><small>compilation leads requiring stronger sourcing</small></div></article>
+      <article><span class="status-dot conflict"></span><div><b>Conflicting</b><strong>3</strong><small>kept visible, excluded from calculations</small></div></article>
+      <article><span class="status-dot unknown"></span><div><b>Unknown / unsearched</b><strong>970</strong><small>absence remains explicit</small></div></article>
+    </div>
+  </section>
+
+  <section class="section shell" id="analysis">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Interactive analysis</p>
+        <h2>Observed claims versus contextual baselines</h2>
+      </div>
+      <p>Choose a prize field, evidence threshold and population baseline. These are descriptive scenario views only: the observed sample is sparse, selected and non-random.</p>
+    </div>
+
+    <div class="analysis-layout">
+      <aside class="control-panel" aria-label="Analysis controls">
+        <label>Evidence set
+          <select id="evidence-set">
+            <option value="screening">All screening claims (19)</option>
+            <option value="reported">Reported-secondary only (4)</option>
+          </select>
+        </label>
+        <label>Prize field
+          <select id="field-filter">
+            <option>All fields</option>
+            <option>Physics</option>
+            <option>Chemistry</option>
+            <option>Medicine</option>
+            <option>Literature</option>
+            <option>Peace</option>
+            <option>Economics</option>
+          </select>
+        </label>
+        <label>Population reference
+          <select id="baseline-filter">
+            <option>Global</option>
+            <option>Japan</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>South Korea</option>
+          </select>
+        </label>
+        <div class="control-note">
+          <span>Interpretation gate</span>
+          <strong id="gate-label">Locked</strong>
+          <p id="gate-copy">The dataset does not meet the predeclared conditions for inferential testing.</p>
+        </div>
+      </aside>
+
+      <div class="analysis-panel">
+        <div class="panel-head">
+          <div>
+            <span class="panel-label">Observed vs expected</span>
+            <h3 id="analysis-title">All fields</h3>
+          </div>
+          <div class="sample-badge"><span>Current sample</span><strong id="sample-size">n = 19</strong><small id="sample-coverage">1.9% of denominator</small></div>
+        </div>
+        <div id="comparison-chart" class="comparison-chart" aria-live="polite"></div>
+        <div class="analysis-caption">
+          <p id="baseline-note"></p>
+          <a id="baseline-link" target="_blank" rel="noreferrer">Open baseline source ↗</a>
+        </div>
+        <div id="name-chips" class="name-chips" aria-label="Records in current view"></div>
+      </div>
+    </div>
+
+    <div class="insight-grid">
+      <article><span>Sensitivity check</span><strong>+45</strong><h3>non-AB records</h3><p>would reduce 4/19 AB claims to approximately the 6.24% global reference, even without correcting a single existing claim.</p></article>
+      <article><span>Japan-matched check</span><strong>+8</strong><h3>non-AB Japanese records</h3><p>would reduce 2/12 AB claims to Japan’s 10% reference.</p></article>
+      <article class="featured"><span>Strongest pattern</span><strong>79%</strong><h3>of screening claims are unverified</h3><p>The documentation-quality pattern is far stronger than any defensible biological pattern.</p></article>
+    </div>
+
+    <div class="gate-card">
+      <div><span>Statistical analysis gate</span><strong>Locked</strong></div>
+      <p>The project deliberately blocks hypothesis testing until a predeclared minimum evidence threshold is met.</p>
+      <ul>
+        <li><b>4 total / 30 per field</b><span>stronger-source records required</span></li>
+        <li><b>0.4% / 70%</b><span>unique-laureate coverage</span></li>
+        <li><b>Not met</b><span>expected count ≥5 in every ABO cell</span></li>
+        <li><b>Not met</b><span>conflict rate below 5%</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="ledger">
+    <div class="shell">
+      <div class="section-heading light">
+        <div>
+          <p class="kicker">Evidence ledger</p>
+          <h2>Audit the people behind every count</h2>
+        </div>
+        <p>Search, filter and open the person-specific source. An explicit secondary report is still not a medical record; compilation leads remain unverified.</p>
+      </div>
+      <div class="ledger-toolbar">
+        <label class="search"><span>⌕</span><input id="record-search" type="search" placeholder="Search name, field or country"></label>
+        <select id="record-status" aria-label="Filter evidence status">
+          <option value="all">All evidence states</option>
+          <option value="reported_secondary_source">Reported secondary</option>
+          <option value="unverified">Unverified</option>
+        </select>
+        <select id="record-blood" aria-label="Filter blood type">
+          <option value="all">All ABO</option>
+          <option>A</option><option>B</option><option>AB</option><option>O</option>
+        </select>
+      </div>
+      <p class="result-count" id="result-count">19 records</p>
+      <div class="table-wrap">
+        <table class="ledger-table">
+          <thead><tr><th>Laureate</th><th>Prize</th><th>ABO</th><th>Source type</th><th>Evidence</th><th>Source</th></tr></thead>
+          <tbody id="ledger-body"></tbody>
+        </table>
+      </div>
+
+      <div class="conflict-block">
+        <div><p class="kicker">Excluded contradictions</p><h3>Conflicts are retained, not averaged away.</h3></div>
+        <article><strong>Yasunari Kawabata</strong><span>Literature</span><b>A vs O</b></article>
+        <article><strong>Ryoji Noyori</strong><span>Chemistry</span><b>A vs O</b></article>
+        <article><strong>Masatoshi Koshiba</strong><span>Physics</span><b>B vs O, later A</b></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm" id="queue">
+    <div class="shell">
+      <div class="section-heading">
+        <div><p class="kicker">Complete research queue</p><h2>Unknown is a first-class data state</h2></div>
+        <p>The denominator snapshot covers 992 person-laureate records across the six prize categories. Missing records are not silently dropped from the research frame.</p>
+      </div>
+      <div class="queue-stats">
+        <div><span>Denominator</span><strong>992</strong></div>
+        <div><span>Named claims</span><strong>19</strong></div>
+        <div><span>Conflicts</span><strong>3</strong></div>
+        <div><span>Unknown / unsearched</span><strong>970</strong></div>
+      </div>
+      <div class="table-wrap light-table">
+        <table>
+          <thead><tr><th>Prize field</th><th>Total</th><th>Reported secondary</th><th>Unverified</th><th>Conflict</th><th>Unknown</th><th>Reviewed share</th></tr></thead>
+          <tbody id="queue-body"></tbody>
+        </table>
+      </div>
+      <div class="priority-line"><b>Priority order:</b><span>resolve conflicts</span><span>upgrade unverified leads</span><span>search ethically in relevant languages</span><span>record negative searches and dates</span></div>
+    </div>
+  </section>
+
+  <section class="section shell" id="context">
+    <div class="section-heading">
+      <div><p class="kicker">Context datasets</p><h2>Education trails and population baselines are kept separate</h2></div>
+      <p>School-country records help document research coverage but are not valid proxies for ancestry. Population baselines are contextual references, not matched controls.</p>
+    </div>
+    <div class="context-grid">
+      <article class="context-card">
+        <div class="card-head"><div><span>High-school-country subset</span><h3>224 structured school records</h3><p>193 unique laureates across 17 countries; top documented countries are shown below.</p></div><span class="pill">discovery dataset</span></div>
+        <div id="school-chart" class="bar-list"></div>
+        <div class="warning"><b>Documentation bias:</b> U.S. dominance is likely driven partly by English-language and biographical coverage, not performance.</div>
+      </article>
+      <article class="context-card">
+        <div class="card-head"><div><span>Population reference</span><h3>Five independent ABO baselines</h3><p>Each source is preserved separately rather than blended into a synthetic “universal” distribution.</p></div><span class="pill">context only</span></div>
+        <div class="baseline-table" id="baseline-table"></div>
+        <div class="warning"><b>Matching hierarchy:</b> self-report/medical source → citable ancestry context → country proxy → global fallback. Never infer ancestry.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="method">
+    <div class="shell">
+      <div class="section-heading light">
+        <div><p class="kicker">Methodology</p><h2>The missing data are part of the result</h2></div>
+        <p>The project treats provenance and uncertainty as data structures. It does not allow a polished visualization to erase the weakness of the evidence underneath it.</p>
+      </div>
+
+      <div class="method-flow">
+        <article><b>01</b><h3>Verify identity</h3><p>Crosswalk name, year and prize field against official Nobel records.</p></article>
+        <article><b>02</b><h3>Search locally</h3><p>Use relevant languages and name variants; record what was searched.</p></article>
+        <article><b>03</b><h3>Trace provenance</h3><p>Copied celebrity lists do not become independent confirmation through repetition.</p></article>
+        <article><b>04</b><h3>Grade evidence</h3><p>Separate confirmed, explicit secondary reporting, unverified leads, conflicts and unknowns.</p></article>
+        <article><b>05</b><h3>Publish missingness</h3><p>Unknown and conflicting records stay visible beside every descriptive result.</p></article>
+      </div>
+
+      <div class="formula-card">
+        <div><span>Matched expectation</span><strong>E<sub>f,t</sub> = Σ p<sub>i,t</sub></strong></div>
+        <p>For each laureate in field <em>f</em>, add the prevalence of blood type <em>t</em> in a predeclared matching population <em>i</em>. This is meaningful only when the matching rule and evidence quality are defensible.</p>
+      </div>
+
+      <div class="research-notes">
+        <article class="note-good"><span>Stronger public report</span><h3>Yoshinori Ohsumi · O</h3><p>A named interview profile explicitly records type O. It is person-specific public evidence, but not independent medical confirmation.</p><a href="https://www.sandiegoyuyu.com/index.php/features-2/interviews/%E5%A4%A7%E9%9A%85%E8%89%AF%E5%85%B82016" target="_blank" rel="noreferrer">Open source ↗</a></article>
+        <article><span>Useful negative result</span><h3>Kailash Satyarthi donation trail</h3><p>A Times of India report documents a 2014 blood donation and donor-directory context, but does not disclose his blood type. Donation alone cannot support inference.</p><a href="https://timesofindia.indiatimes.com/city/bhopal/blood-brother-of-vidisha-creates-donor-directory-of-85k-people/articleshow/54938960.cms" target="_blank" rel="noreferrer">Open report ↗</a></article>
+        <article class="note-warn"><span>Conflict</span><h3>Han Kang remains excluded</h3><p>Public profile pages conflict and do not expose a traceable original source. The project records the contradiction rather than choosing a value.</p><a href="https://googlethx.tistory.com/entry/%EB%85%B8%EB%B2%A8%EB%AC%B8%ED%95%99%EC%83%81-%ED%95%9C%EA%B0%95-%EC%9E%91%EA%B0%80-%ED%94%84%EB%A1%9C%ED%95%84" target="_blank" rel="noreferrer">Example profile ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell" id="sources">
+    <div class="section-heading">
+      <div><p class="kicker">Open sourcebook</p><h2>Every analytical claim should be traceable</h2></div>
+      <p>Sources include official Nobel identifiers, blood-service baselines, reputable reports and discovery compilations. Their roles are deliberately not treated as equivalent.</p>
+    </div>
+    <div id="source-list" class="source-list"></div>
+
+    <div class="release-grid">
+      <article>
+        <p class="kicker">Version history</p>
+        <h3>Research changes are versioned</h3>
+        <ol class="timeline">
+          <li><time>20 Aug 2026</time><b>v0.1</b><span>Initial 19-claim screening atlas, conflict ledger and global context.</span></li>
+          <li><time>23 Aug 2026</time><b>v0.2</b><span>Evidence-grade redesign, stronger-source view, export and sensitivity checks.</span></li>
+          <li><time>23 Aug 2026</time><b>v0.3</b><span>Five population baselines, full field-level research queue, matching protocol and analysis gate.</span></li>
+          <li><time>03 Oct 2026</time><b>v0.4.0</b><span>Public GitHub Pages migration; canonical evidence labels aligned with validation data and static release package added.</span></li>
+        </ol>
+      </article>
+      <article class="release-card">
+        <p class="kicker">Public release package</p>
+        <h3>Designed to survive deletion of the original Site</h3>
+        <p>The GitHub repository now contains the static website, screening ledger, evidence summary, population baselines, methodology, research notes and deployment workflow. No live submission database is required.</p>
+        <div class="download-stack">
+          <a href="./data/laureate-blood-type-claims.csv" download>Screening claims CSV ↓</a>
+          <a href="./data/reference-populations.csv" download>Population baselines CSV ↓</a>
+          <a href="./data/evidence-summary.json" download>Evidence summary JSON ↓</a>
+          <a href="./docs/METHODOLOGY.md">Methodology document →</a>
+          <a href="./docs/RESEARCH_NOTES.md">Research notes →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section disclosure">
+    <div class="shell disclosure-card">
+      <div><p class="kicker">Publication boundary</p><h2>Open research does not mean publishing private submissions.</h2></div>
+      <p>This public release intentionally excludes contact information, pending user submissions, credentials, live database contents and deployment secrets. Those are operational/private data, not part of the research corpus. The analytical dataset contains only deliberately published public-source claims and their provenance.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <div class="brand"><span class="brand-mark">N</span><span>Nobel Blood Atlas</span></div>
+    <p>Created by Arya Kia · evidence mapping · data quality · research visualization</p>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="./assets/app.js" defer></script>
+</body>
+</html>
