@@ -21,6 +21,8 @@ const records=[
 {name:"Bob Dylan",field:"Literature",year:2016,blood:"AB",country:"United States",status:"unverified",sourceType:"unsourced compilation",source:"https://abofan.jimdofree.com/%E3%83%87%E3%83%BC%E3%82%BF/%E3%83%8E%E3%83%BC%E3%83%99%E3%83%AB%E8%B3%9E%E5%8F%97%E8%B3%9E%E8%80%85/",note:"Uncited compilation lead."}
 ];
 
+records.forEach(function(record,index){record.claimId="NB-"+String(index+1).padStart(3,"0");});
+
 const baselines={
 "Global":{A:29.41,B:23.13,AB:6.24,O:41.22,source:"https://hemefoundation.org/what-types-of-blood-donations-are-considered-rare/",note:"Broad global aggregate; useful only as a coarse context."},
 "Japan":{A:40,B:20,AB:10,O:30,source:"https://www.bs.jrc.or.jp/kk/hyogo/donation/m2_02_01_00_bloodtype.html",note:"Japanese Red Cross population estimate."},
@@ -88,7 +90,7 @@ function renderLedger(){
   document.getElementById("ledger-body").innerHTML=rows.map(function(r){
     const label=r.status==="reported_secondary_source"?"Reported secondary":"Unverified";
     const cls=r.status==="reported_secondary_source"?"reported":"unverified";
-    return"<tr><td><strong>"+esc(r.name)+"</strong><small>"+esc(r.note)+"</small></td><td>"+r.field+"<small>"+r.year+"</small></td><td><span class='blood-dot' style='background:"+COLORS[r.blood]+"'></span>"+r.blood+"</td><td>"+esc(r.sourceType)+"</td><td><span class='evidence-pill "+cls+"'>"+label+"</span></td><td><a class='source-link' href='"+esc(r.source)+"' target='_blank' rel='noreferrer'>Open ↗</a></td></tr>";
+    return"<tr><td><strong>"+esc(r.name)+"</strong><small>"+esc(r.note)+"</small></td><td>"+r.field+"<small>"+r.year+"</small></td><td><span class='blood-dot' style='background:"+COLORS[r.blood]+"'></span>"+r.blood+"</td><td>"+esc(r.sourceType)+"</td><td><span class='evidence-pill "+cls+"'>"+label+"</span></td><td><a class='source-link' href='"+esc(r.source)+"' target='_blank' rel='noreferrer'>Open ↗</a></td><td><button class='dossier-button' type='button' data-dossier='"+esc(r.claimId)+"'>View</button></td></tr>";
   }).join("");
 }
 function renderQueue(){
@@ -120,6 +122,124 @@ function renderSources(){
     return"<a class='source-item' href='"+esc(s[3])+"' target='_blank' rel='noreferrer'><span>"+String(i+1).padStart(2,"0")+"</span><div><strong>"+esc(s[0])+"</strong><small>"+esc(s[2])+"</small></div><b>"+esc(s[1])+"</b><i>↗</i></a>";
   }).join("");
 }
+
+function provenanceFor(record){
+  if(record.source.includes("abobible.wixsite.com")) return {family:"ABO Bible compilation",cluster:"abo_bible",score:0,label:"Unsupported / unknown provenance"};
+  if(record.source.includes("abofan.jimdofree.com")) return {family:"ABO FAN compilation",cluster:"abo_fan",score:0,label:"Unsupported / unknown provenance"};
+  if(record.source.includes("view.asiae.co.kr")) return {family:"Asia Economy report",cluster:"asiae_kim",score:1,label:"One identifiable person-specific source"};
+  if(record.source.includes("ourbloodinstitute.org")) return {family:"Our Blood Institute review",cluster:"ourblood_carter",score:1,label:"One identifiable person-specific source"};
+  if(record.source.includes("bbc.co.uk")) return {family:"BBC report",cluster:"bbc_obama",score:1,label:"One identifiable person-specific source"};
+  if(record.source.includes("sandiegoyuyu.com")) return {family:"Ohsumi interview profile",cluster:"sandiego_ohsumi",score:1,label:"One identifiable person-specific source"};
+  return {family:"Other / unclassified",cluster:"other",score:0,label:"Provenance not classified"};
+}
+
+function renderResearchProgram(){
+  const funnel=[
+    {label:"Person-laureate research frame",value:992,note:"100% denominator snapshot"},
+    {label:"Claim or conflict tracked",value:22,note:"2.2% of frame"},
+    {label:"Screening claims",value:19,note:"1.9% of frame"},
+    {label:"Reported-secondary sources",value:4,note:"0.4% of frame"},
+    {label:"Confirmed",value:0,note:"0% of frame"}
+  ];
+  const funnelEl=document.getElementById("research-funnel");
+  if(funnelEl) funnelEl.innerHTML=funnel.map(function(stage,index){
+    return "<div class='funnel-stage'><span class='funnel-index'>"+String(index+1).padStart(2,"0")+"</span><div><b>"+esc(stage.label)+"</b><small>"+esc(stage.note)+"</small></div><strong>"+stage.value+"</strong></div>";
+  }).join("");
+
+  const matrixEl=document.getElementById("coverage-matrix");
+  if(matrixEl){
+    matrixEl.innerHTML="<div class='matrix-row matrix-head'><b>Field</b><span>Report</span><span>Lead</span><span>Conflict</span><span>Legacy unresolved</span></div>"+
+      Object.keys(fieldTotals).map(function(field){
+        const rs=records.filter(function(r){return r.field===field;});
+        const reported=rs.filter(function(r){return r.status==="reported_secondary_source";}).length;
+        const leads=rs.length-reported;
+        const conflict=conflicts[field];
+        const unresolved=fieldTotals[field]-rs.length-conflict;
+        return "<div class='matrix-row'><b>"+field+"</b><span class='m-reported'>"+reported+"</span><span class='m-lead'>"+leads+"</span><span class='m-conflict'>"+conflict+"</span><span>"+unresolved+"</span></div>";
+      }).join("");
+  }
+
+  const families={};
+  records.forEach(function(r){
+    const p=provenanceFor(r);
+    families[p.family]=(families[p.family]||0)+1;
+  });
+  const familyRows=Object.entries(families).sort(function(a,b){return b[1]-a[1];});
+  const maxFamily=Math.max.apply(null,familyRows.map(function(x){return x[1];}));
+  const familyEl=document.getElementById("source-family-chart");
+  if(familyEl) familyEl.innerHTML=familyRows.map(function(row){
+    return "<div class='source-family-row'><div><span>"+esc(row[0])+"</span><b>"+row[1]+"</b></div><div class='source-family-track'><i style='width:"+(row[1]/maxFamily*100)+"%'></i></div></div>";
+  }).join("");
+
+  const independence=[0,1,2,3].map(function(score){
+    return {score:score,count:records.filter(function(r){return provenanceFor(r).score===score;}).length};
+  });
+  const independenceEl=document.getElementById("independence-distribution");
+  if(independenceEl) independenceEl.innerHTML=independence.map(function(item){
+    return "<div class='independence-cell'><span>Score "+item.score+"</span><strong>"+item.count+"</strong><small>"+(item.count===1?"claim":"claims")+"</small></div>";
+  }).join("");
+}
+
+function slugify(value){
+  return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+}
+
+function evidenceLabel(record){
+  return record.status==="reported_secondary_source"?"Reported secondary source":"Unverified lead";
+}
+
+function openDossier(claimId,updateUrl=true){
+  const record=records.find(function(r){return r.claimId===claimId || slugify(r.name)===claimId;});
+  if(!record) return;
+  const provenance=provenanceFor(record);
+  const modal=document.getElementById("dossier-modal");
+  const content=document.getElementById("dossier-content");
+  if(!modal||!content) return;
+  content.innerHTML=
+    "<div class='dossier-kicker'>"+esc(record.claimId)+" · evidence dossier</div>"+
+    "<div class='dossier-title-row'><div><h2 id='dossier-title'>"+esc(record.name)+"</h2><p>"+esc(record.field)+" · Nobel "+record.year+"</p></div><span class='dossier-blood' style='background:"+COLORS[record.blood]+"'>"+record.blood+"</span></div>"+
+    "<div class='dossier-grid'>"+
+      "<div><span>Evidence state</span><strong>"+esc(evidenceLabel(record))+"</strong></div>"+
+      "<div><span>Source-independence score</span><strong>"+provenance.score+" / 3</strong><small>"+esc(provenance.label)+"</small></div>"+
+      "<div><span>Source family</span><strong>"+esc(provenance.family)+"</strong><small>"+esc(provenance.cluster)+"</small></div>"+
+      "<div><span>School-country field</span><strong>"+esc(record.country)+"</strong><small>context only; not ancestry</small></div>"+
+    "</div>"+
+    "<div class='dossier-note'><span>Research note</span><p>"+esc(record.note)+"</p></div>"+
+    "<div class='dossier-interpretation'><b>Interpretation boundary</b><p>"+(record.status==="reported_secondary_source"?"This is an explicit person-level public report, but it is not independent medical confirmation.":"This claim remains a discovery lead. It should not enter the stronger-source descriptive subset until provenance is upgraded.")+"</p></div>"+
+    "<div class='dossier-actions'><a href='"+esc(record.source)+"' target='_blank' rel='noreferrer'>Open source ↗</a><a href='./data/evidence-sources.csv'>Provenance dataset →</a></div>";
+  modal.hidden=false;
+  document.body.classList.add("modal-open");
+  const closeButton=modal.querySelector(".dossier-close");
+  if(closeButton) closeButton.focus();
+  if(updateUrl){
+    const url=new URL(window.location.href);
+    url.searchParams.set("record",slugify(record.name));
+    history.replaceState(null,"",url);
+  }
+}
+
+function closeDossier(updateUrl=true){
+  const modal=document.getElementById("dossier-modal");
+  if(!modal) return;
+  modal.hidden=true;
+  document.body.classList.remove("modal-open");
+  if(updateUrl){
+    const url=new URL(window.location.href);
+    url.searchParams.delete("record");
+    history.replaceState(null,"",url);
+  }
+}
+
+const ledgerBody=document.getElementById("ledger-body");
+if(ledgerBody) ledgerBody.addEventListener("click",function(event){
+  const button=event.target.closest("[data-dossier]");
+  if(button) openDossier(button.getAttribute("data-dossier"));
+});
+document.querySelectorAll("[data-dossier-close]").forEach(function(el){el.addEventListener("click",function(){closeDossier();});});
+document.addEventListener("keydown",function(event){if(event.key==="Escape") closeDossier();});
+
 ["evidence-set","field-filter","baseline-filter"].forEach(function(id){document.getElementById(id).addEventListener("change",renderAnalysis);});
 ["record-search","record-status","record-blood"].forEach(function(id){document.getElementById(id).addEventListener(id==="record-search"?"input":"change",renderLedger);});
-renderAnalysis();renderLedger();renderQueue();renderSchool();renderBaselines();renderSources();
+renderResearchProgram();renderAnalysis();renderLedger();renderQueue();renderSchool();renderBaselines();renderSources();
+const deepLinkRecord=new URL(window.location.href).searchParams.get("record");
+if(deepLinkRecord) openDossier(deepLinkRecord,false);
