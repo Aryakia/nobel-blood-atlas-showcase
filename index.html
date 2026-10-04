@@ -46,6 +46,7 @@
       <span>Nobel Blood Atlas</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a href="#journey">Why it changed</a>
       <a href="#research">Research program</a>
       <a href="#analysis">Analysis</a>
       <a href="#ledger">Evidence</a>
@@ -61,11 +62,12 @@
   <section class="hero">
     <div class="shell hero-grid">
       <div>
-        <p class="eyebrow">Evidence atlas · dataset v0.5.0 · interface v1.0.0</p>
+        <p class="eyebrow">Evidence atlas · dataset v0.5.0 · interface v1.1.0</p>
         <h1>When the evidence is sparse, the interface should say so.</h1>
-        <p class="lede">Nobel Blood Atlas maps publicly reported blood-type claims about Nobel laureates while keeping provenance, uncertainty, contradictions, documentation bias and missingness visible. It is a research-methods project first—not a claim that blood type explains achievement.</p>
+        <p class="lede">Nobel Blood Atlas maps publicly reported blood-type claims about Nobel laureates while keeping provenance, uncertainty, contradictions, documentation bias and missingness visible. What began as a question about blood type became a study of what happens when a simple comparison meets confounding, selective documentation and weak provenance.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#analysis">Explore the atlas</a>
+          <a class="button button-primary" href="#journey">Why the question changed</a>
+          <a class="button" href="#analysis">Explore the data</a>
           <a class="button" href="https://github.com/Aryakia/nobel-blood-atlas-showcase">View source on GitHub</a>
         </div>
         <div class="hero-rule">
@@ -79,7 +81,7 @@
             <div class="hero-card-kicker">Evidence profile</div>
             <p>Current public research snapshot</p>
           </div>
-          <span class="release-badge">data 0.5 · UI 1.0</span>
+          <span class="release-badge">data 0.5 · UI 1.1</span>
         </div>
 
         <div class="evidence-ring-layout">
@@ -111,6 +113,147 @@
       <article><span class="status-dot unverified"></span><div><b>Unverified</b><strong>15</strong><small>compilation leads requiring stronger sourcing</small></div></article>
       <article><span class="status-dot conflict"></span><div><b>Conflicting</b><strong>3</strong><small>kept visible, excluded from calculations</small></div></article>
       <article><span class="status-dot unknown"></span><div><b>Legacy unresolved</b><strong>970</strong><small>not retro-classified as searched or unsearched</small></div></article>
+    </div>
+  </section>
+
+  <section class="section journey-section" id="journey">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">How the question changed</p>
+          <h2>A simple curiosity became a problem of confounding and selection</h2>
+        </div>
+        <p>The project began after a blood donation prompted a simple question about ABO types and Nobel laureates. The research process showed that the obvious comparison—Nobel laureates versus the world average—is not the scientifically appropriate test.</p>
+      </div>
+
+      <div class="origin-grid">
+        <article class="origin-card">
+          <span class="origin-number">01</span>
+          <div>
+            <p class="mini-kicker">Initial curiosity</p>
+            <h3>Could the ABO distribution among Nobel laureates look unusual?</h3>
+            <p>This was an exploratory question, not a prior belief that blood type explains achievement. It was a reason to learn more about blood-group distributions and evidence.</p>
+          </div>
+        </article>
+        <article class="origin-card origin-card-shift">
+          <span class="origin-number">02</span>
+          <div>
+            <p class="mini-kicker">First correction</p>
+            <h3>The world population is the wrong primary benchmark.</h3>
+            <p>Nobel laureates are not a random draw from humanity. Their geographic, historical and population composition differs from the global population, while ABO frequencies also differ across populations.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="counterfactual-panel">
+        <div class="counterfactual-copy">
+          <p class="kicker">The correct counterfactual</p>
+          <h3>Expected blood types should reflect the composition of the Nobel population.</h3>
+          <p>Under a null hypothesis in which Nobel status has no relationship with blood type, each laureate should contribute the ABO probabilities of the most defensible reference population available for that person. Those probabilities are then summed into a composition-adjusted expectation.</p>
+          <div class="equation-box">
+            <span>Composition-adjusted expectation</span>
+            <strong>E<sub>t</sub> = Σ<sub>i</sub> p<sub>i,t</sub></strong>
+            <small>For blood type <em>t</em>, sum each laureate’s predeclared reference probability.</small>
+          </div>
+          <div class="matching-rule">
+            <b>Reference hierarchy</b>
+            <span>person-specific population evidence</span>
+            <i>→</i>
+            <span>appropriate regional/population reference</span>
+            <i>→</i>
+            <span>country proxy when defensible</span>
+            <i>→</i>
+            <span>global fallback</span>
+          </div>
+          <p class="boundary-note"><strong>Important:</strong> the atlas does not assign ancestry from a name, appearance, school location or nationality, and it does not reduce the analysis to broad racial categories. A weighting variable must itself be defensible evidence.</p>
+        </div>
+
+        <div class="benchmark-compare" aria-label="Comparison of naive and intended benchmarks">
+          <article class="benchmark-card benchmark-naive">
+            <div class="benchmark-status">Naive benchmark</div>
+            <h4>Observed Nobel ABO</h4>
+            <span class="benchmark-arrow">versus</span>
+            <h4>World-average ABO</h4>
+            <p>Useful only as coarse context. It can confound population composition with any apparent Nobel-associated difference.</p>
+            <b>Not the primary test</b>
+          </article>
+          <article class="benchmark-card benchmark-intended">
+            <div class="benchmark-status">Intended benchmark</div>
+            <h4>Observed Nobel ABO</h4>
+            <span class="benchmark-arrow">versus</span>
+            <h4>Composition-adjusted expectation</h4>
+            <p>Each laureate contributes a defensible population-specific ABO probability before the expected counts are aggregated.</p>
+            <b>Methodologically preferred</b>
+          </article>
+        </div>
+      </div>
+
+      <div class="selection-model">
+        <div class="selection-copy">
+          <p class="kicker">The second correction</p>
+          <h3>Even the blood types we can find are not a random Nobel sample.</h3>
+          <p>Public documentation itself is selective. Language, era, media practice, cultural salience and prominence can affect whether a laureate’s blood type becomes publicly discoverable.</p>
+        </div>
+        <div class="selection-flow" aria-label="Two-stage selection process">
+          <div><span>Population</span><strong>Human population</strong><small>ABO distributions differ across populations</small></div>
+          <i>Demographic & institutional selection</i>
+          <div><span>Selected group</span><strong>Nobel laureates</strong><small>not demographically representative of humanity</small></div>
+          <i>Documentation & language selection</i>
+          <div><span>Observable subset</span><strong>Publicly discoverable ABO records</strong><small>not representative of all laureates</small></div>
+          <i>Evidence-quality filtering</i>
+          <div><span>Analytical subset</span><strong>Defensible research records</strong><small>currently far too sparse for inference</small></div>
+        </div>
+      </div>
+
+      <div class="learning-path">
+        <div class="learning-path-head">
+          <div>
+            <p class="kicker">Research progression</p>
+            <h3>The project became stronger by changing the question</h3>
+          </div>
+          <p>Each step below represents a methodological correction rather than a new claim.</p>
+        </div>
+        <div class="learning-steps">
+          <article><b>1</b><span>Curiosity</span><p>Are Nobel laureates’ blood types unusual?</p></article>
+          <article><b>2</b><span>Confounding</span><p>Nobel laureates are not a random world population.</p></article>
+          <article><b>3</b><span>Standardization</span><p>Build a composition-adjusted expected ABO distribution.</p></article>
+          <article><b>4</b><span>Selection bias</span><p>Public blood-type documentation is itself non-random.</p></article>
+          <article><b>5</b><span>Provenance</span><p>Repeated web claims can share the same weak source.</p></article>
+          <article><b>6</b><span>Current question</span><p>Can a sufficiently complete, provenance-aware corpus support a properly standardized comparison?</p></article>
+        </div>
+      </div>
+
+      <article class="current-question-card">
+        <div class="question-state">
+          <span>Current inferential question</span>
+          <strong>Not yet testable</strong>
+        </div>
+        <blockquote>After accounting for the population composition of Nobel laureates and the non-random documentation of blood type, does the observed ABO distribution differ meaningfully from its expected distribution?</blockquote>
+        <p>The current evidence is too sparse, source-dependent and selectively documented for a defensible inferential answer. That limitation is a result of the research, not something the interface hides.</p>
+      </article>
+
+      <div class="future-test-grid">
+        <article>
+          <span>Requirement 1</span>
+          <h3>Systematic denominator coverage</h3>
+          <p>Search the 992-person frame with documented languages, queries and negative outcomes.</p>
+        </article>
+        <article>
+          <span>Requirement 2</span>
+          <h3>Composition-adjusted expectation</h3>
+          <p>Assign defensible population reference probabilities before aggregating expected A, B, AB and O counts.</p>
+        </article>
+        <article>
+          <span>Requirement 3</span>
+          <h3>Documentation-bias assessment</h3>
+          <p>Model or otherwise account for who is more likely to have a publicly discoverable blood type.</p>
+        </article>
+        <article class="future-test-lock">
+          <span>Inferential test</span>
+          <h3>Locked</h3>
+          <p>Only after the first three requirements are sufficiently satisfied should observed-versus-expected differences be tested.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -414,6 +557,7 @@
           <li><time>03 Oct 2026</time><b>v0.4.0</b><span>Public GitHub Pages migration; canonical evidence labels aligned with validation data and static release package added.</span></li>
           <li><time>03 Oct 2026</time><b>data v0.5.0</b><span>Added provenance clusters, source-independence classes, search-state schema, search log and research-progress metadata. ABO claim values unchanged.</span></li>
           <li><time>03 Oct 2026</time><b>UI v1.0.0</b><span>Added research funnel, coverage matrix, provenance/bias lab and deep-linkable record dossiers.</span></li>
+          <li><time>03 Oct 2026</time><b>UI v1.1.0</b><span>Added the project-origin narrative, composition-adjusted counterfactual, two-stage selection model and explicit future-test requirements.</span></li>
         </ol>
       </article>
       <article class="release-card">
