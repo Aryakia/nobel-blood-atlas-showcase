@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use the Nobel Blood Atlas dataset, methodology, or interface in scholarly work, please cite this repository."
+title: "Nobel Blood Atlas: Evidence Mapping for Sparse and Selectively Documented Public Data"
+type: dataset
+authors:
+  - family-names: Kia
+    given-names: Arya
+repository-code: "https://github.com/Aryakia/nobel-blood-atlas-showcase"
+url: "https://aryakia.github.io/nobel-blood-atlas-showcase/"
+version: "0.5.0"
+date-released: "2026-10-03"
+abstract: "An evidence-first research atlas for publicly reported Nobel laureate blood-type claims, designed to keep provenance, contradiction, missingness, source dependence, and documentation bias visible."
+keywords:
+  - evidence mapping
+  - provenance
+  - missing data
+  - data quality
+  - documentation bias
+  - research visualization
