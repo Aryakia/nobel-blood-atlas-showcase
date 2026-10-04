@@ -4,6 +4,18 @@ All notable public research and interface changes are documented here.
 
 Dataset and interface versions are independent.
 
+## Interface v1.1.0 — 2026-10-03
+
+- added a restrained project-origin narrative beginning with the blood-donation curiosity;
+- explained why the world-average ABO distribution is not the appropriate primary null benchmark;
+- added the composition-adjusted expectation framework E_t = Σ_i p_i,t;
+- added a reference hierarchy without inferring ancestry or using broad racial categories as a shortcut;
+- added a two-stage selection model: population → Nobel laureates → publicly discoverable ABO records → defensible analytical subset;
+- reframed the current inferential question around demographic composition and selective documentation;
+- added a six-step research-progression narrative;
+- added three prerequisites for a future valid test and kept inferential analysis locked;
+- relabelled the existing interactive baseline comparison as contextual rather than expected.
+
 ## Dataset v0.5.0 / Interface v1.0.0 — 2026-10-03
 
 ### Dataset
